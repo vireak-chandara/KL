@@ -1,0 +1,53 @@
+kl_users:   
+    path:    /users/
+    defaults: { _controller: KLtestBundle:Users:index }
+    
+kl_users_add:   
+    path:    /users/add
+    defaults: { _controller: KLtestBundle:Users:add }
+
+kl_users_view:
+    path:      /users/{id}
+    defaults:
+        _controller: KLtestBundle:Users:view
+    requirements:
+        id: \d+
+        
+kl_users_edit:
+    path:      /users/edit/{id}
+    defaults:
+        _controller: KLtestBundle:Users:edit
+    requirements:
+        id: \d+
+
+kl_groups:
+    path:      /groups
+    defaults:
+        _controller: KLtestBundle:Groups:index
+        
+kl_groups_add:   
+    path:    /groups/add
+    defaults: { _controller: KLtestBundle:Groups:add }
+
+kl_groups_view:
+    path:      /groups/{id}
+    defaults:
+        _controller: KLtestBundle:Groups:view
+    requirements:
+        id: \d+
+
+kl_groups_edit:
+    path:      /groups/edit/{id}
+    defaults:
+        _controller: KLtestBundle:Groups:edit
+    requirements:
+        id: \d+
+        
+kl_user_groups_delete:
+    path:      /groups/delete/{id}
+    defaults:
+        _controller: KLtestBundle:Groups:delete
+    requirements:
+        id: \d+
+
+        

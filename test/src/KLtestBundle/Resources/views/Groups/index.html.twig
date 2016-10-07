@@ -1,0 +1,30 @@
+
+
+{% extends "KLtestBundle::layout.html.twig" %}
+
+{% block title %}
+  Accueil - {{ parent() }}
+{% endblock %}
+
+{% block kltest_body %}
+
+  <h2>Liste des groupes</h2>
+
+  <ul>
+    {% for group in listGroups %}
+      <li>
+        <a href="{{ path('kl_group_view', {'id': group.id}) }}">
+          {{ group.nom }}
+        </a>
+      </li>
+    {% else %}
+      <li>Pas (encore !) de groupe</li>
+    {% endfor %}
+  </ul>
+  
+    <a href="{{ path('kl_groups_add') }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      Créer un groupe
+    </a>
+
+{% endblock %}

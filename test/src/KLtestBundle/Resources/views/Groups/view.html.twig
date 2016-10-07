@@ -1,0 +1,24 @@
+
+
+{% block title %}
+  Lecture d'un groupe - {{ parent() }}
+{% endblock %}
+
+{% block kltest_body %}
+  <h2>{{ group.nom}}</h2>
+  <div class="well">
+    {{ group.nom }}   
+  </div>
+
+  <p>
+    <a href="{{ path('kl_group_view') }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      Retour à la liste
+    </a>
+    <a href="{{ path('kl_group_edit', {'id': group.id}) }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-edit"></i>
+      Modifier le groupe
+    </a>
+  </p>
+
+{% endblock %}

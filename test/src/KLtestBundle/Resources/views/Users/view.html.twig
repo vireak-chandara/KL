@@ -1,0 +1,33 @@
+{% extends "KLtestBundle::layout.html.twig" %}
+
+{% block title %}
+  Lecture d'un user - {{ parent() }}
+{% endblock %}
+
+{% block kltest_body %}
+  <h2>{{ user.nom}}</h2>
+  <div class="well">
+    {{ user.nom }}
+    {{ user.prenom }}
+    {{ user.email }}
+    {% if true == user.actif %}
+        Actif
+    {% else %}
+        Inactif
+    {% endif %}
+    {{ user.dateCreation|date('d/m/Y') }}
+     
+  </div>
+
+  <p>
+    <a href="{{ path('kl_users') }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      Retour à la liste
+    </a>
+    <a href="{{ path('kl_users_edit', {'id': user.id}) }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-edit"></i>
+      Modifier l'user
+    </a>
+  </p>
+
+{% endblock %}

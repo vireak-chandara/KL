@@ -1,0 +1,3 @@
+k_ltest:
+    resource: "@KLtestBundle/Resources/config/routing.yml"
+
